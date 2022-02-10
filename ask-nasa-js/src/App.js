@@ -10,6 +10,8 @@ export default function App() {
     const [data, setData] = useState("Loading...");
     const [ApiUrl, setApiUrl] = useState(baseApiUrl)
     const [inputDate, setInputDate] = useState(TodayDateString());
+    const maxDate = new Date(TodayDateString());
+    const minDate = new Date("1995-06-16");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,7 +19,14 @@ export default function App() {
     }
 
     const handleDateChange = (e) => {
-        setInputDate(e.target.value);
+        let givenDate = new Date(e.target.value);
+        
+        if (givenDate >= minDate && givenDate <= maxDate) {
+            setInputDate(e.target.value);
+        }
+        else {
+            alert("Choose date after 1995-06-16 and not in the future! :)");
+        }
     }
 
     useEffect(() => {

@@ -1,6 +1,13 @@
-﻿import React from 'react';
+﻿import React, {useState} from 'react';
+import TodayDateString from "./TodayDateString";
 
-export default function DatePicker( { inputDate, handleDateChange, handleSubmit } ) {
+export default function DatePicker({inputDate, handleDateChange, handleSubmit}) {
+    // const checkIsDateInRange = (e) => {
+    //     if (e.target.value > maxDate || e.target.value < minDate) {
+    //         setDisable(true);
+    //     }
+    // }
+
     return (
         <form
             onSubmit={handleSubmit}>
