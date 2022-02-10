@@ -1,29 +1,21 @@
-﻿// import React, {useState} from 'react';
-// import TodayDateString from "./TodayDateString";
-//
-// export default function DatePicker() {
-//     const [input, setInput] = useState(TodayDateString());
-//
-//     return (
-//         <form
-//             onSubmit={e => {
-//                 e.preventDefault();
-//                 console.log(input);
-//             }}>
-//             <label>
-//                 Search APOD by date:
-//                 <br/>
-//                 <input
-//                     type="date"
-//                     value={input}
-//                     onChange={e => {
-//                         setInput(e.target.value);
-//                     }}
-//                 />
-//             </label>
-//             <button type="submit">
-//                 Submit
-//             </button>
-//         </form>
-//     );
-// }
+﻿import React from 'react';
+
+export default function DatePicker( { inputDate, handleDateChange, handleSubmit } ) {
+    return (
+        <form
+            onSubmit={handleSubmit}>
+            <label>
+                Search APOD by date:
+                <br/>
+                <input
+                    type="date"
+                    value={inputDate}
+                    onChange={handleDateChange}
+                />
+            </label>
+            <button type="submit">
+                Submit
+            </button>
+        </form>
+    );
+}
